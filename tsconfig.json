@@ -1,16 +1,16 @@
 {
-    "compilerOptions": {
-       "target": "es6",
-       "module": "commonjs",
-       "moduleResolution": "node",
-       "sourceMap": true,
-       "emitDecoratorMetadata": true,
-       "experimentalDecorators": true,
-       "removeComments": false,
-       "noImplicitAny": false,
-       "suppressImplicitAnyIndexErrors": true,
-       "outDir":"_dist/",
-       "outFile": "_dist/index.js"
-    }
-  }
+  "compilerOptions": {
+    "target": "es5",
+    "module": "amd",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": false,
+    "outFile":"_dist/index.js"
+  },
+  "files": [
+    "_sources/index.ts"
+  ]
+}
   

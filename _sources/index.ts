@@ -1,15 +1,20 @@
-export const ms = 1;
-export const ss = 1000;
-export const mm = ss * 60;
-export const HH = mm * 60;
+type MS = number
+export const ms: MS = 1;
+type SS = number
+export const ss: SS = 1000;
+type MM = number
+export const mm: MM = ss * 60;
+type HH = number
+export const HH: HH = mm * 60;
 
 type DateArgs= [any?, any?, any?, any?, any?, any?, any?]
 type µDateArgs= [any?, any?, any?, any?, any?, any?, any?, string?]
 
-export default class µDate extends Date {
+export class µDate extends Date {
 
   constructor(...args: µDateArgs){
-    if( args.length > 1 && typeof args.slice(-1)[0] === 'string' ) {
+    if( args.length == 1 ) super( ...args as DateArgs )
+    else if( args.length > 1 && typeof args.slice(-1)[0] === 'string' ) {
       const timeZoneOffset = -1 * µDate.timeZoneOffset( args.pop() ) * mm
       super( (+new Date(...args as DateArgs)) + timeZoneOffset )
     }else{
@@ -25,23 +30,11 @@ export default class µDate extends Date {
     return Math.round( ( (+new Date(tzDateString)) - (+localeDate) ) / mm )
   }
 
-  static now = (formatStr?: string) => {
-    return formatStr ? new µDate().toLocaleFormat(formatStr) : Date.now()
-  }
-
-  timeShift(milliseconds){
+  timeShift(milliseconds: MS){
     this.setTime( this.getTime() + milliseconds )
     return this
   }
 
-  toLocaleFormat(formatStr){
-
-    formatStr = formatStr.replace( /HH/, this.getHours().toString() )
-    formatStr = formatStr.replace( /mm/, this.getMinutes().toString() )
-    formatStr = formatStr.replace( /ss/, this.getSeconds().toString() )
-
-    return formatStr
-  }
-
 }
 
+(global as any).µDate = µDate;

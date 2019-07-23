@@ -1,16 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "amd",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "removeComments": true,
+    "rootDir": "./_sources/",
+    "outDir": "./_dist/",
     "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": false,
-    "outFile":"_dist/index.js"
-  },
-  "files": [
-    "_sources/index.ts"
-  ]
+    "target": "es6",
+    "module": "es6",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true
+  }
 }
-  

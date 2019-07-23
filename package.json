@@ -1,27 +1,21 @@
 {
   "name": "mudate",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "µDate is a superset of Date that helps you handle timezones",
   "main": "_dist/index.js",
+  "types": "_dist/index.d.js",
   "scripts": {
-    "start": "npm run watch & npm run serve",
-    "serve": "lite-server --baseDir=\"_dist\"",
-    "build": "browserify _sources/index.ts -p tsify -o _dist/index.js",
-    "watch": "watchify _sources/index.ts -p tsify -o _dist/index.js",
+    "start": "webpack-dev-server  --mode development --progress --color --open",
+    "build": "tsc",
     "publish:gh-pages": "git checkout master; npm run build; git subtree split --prefix _dist -b gh-pages; git push -f origin gh-pages:gh-pages; git branch -D gh-pages",
     "publish:npmjs": "npm publish"
   },
   "bundlesize": [
     {
       "path": "_dist/index.js",
-      "maxSize": "3 kB"
+      "maxSize": "500 B"
     }
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/long-lazuli/mudate.git"
@@ -37,17 +31,14 @@
   },
   "homepage": "https://github.com/long-lazuli/mudate#readme",
   "devDependencies": {
-    "browserify": "^16.2.3",
-    "bundlesize": "^0.17.0",
-    "husky": "^1.1.3",
-    "lint-staged": "^8.0.4",
-    "lite-server": "^2.4.0",
-    "npm-run-all": "^4.1.5",
-    "tsify": "^4.0.0",
-    "tslint": "^5.11.0",
-    "tslint-consistent-codestyle": "^1.14.1",
-    "tslint-microsoft-contrib": "^5.2.1",
-    "typescript": "^3.1.6",
-    "watchify": "^3.11.0"
+    "bundlesize": "^0.18.0",
+    "ts-loader": "^6.0.4",
+    "tslint": "^5.18.0",
+    "tslint-consistent-codestyle": "^1.15.1",
+    "tslint-microsoft-contrib": "^6.2.0",
+    "typescript": "^3.5.3",
+    "webpack": "^4.37.0",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
   }
 }

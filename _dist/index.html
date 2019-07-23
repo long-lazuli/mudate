@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<head>
+    <title>µDate tests</title>
+    <style>
+        pre {
+            border: inset;
+            white-space: pre;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        pre>script {
+            border-bottom: ridge;
+            display: block;
+            white-space: pre;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <h1>µDate tests</h1>
+    <pre><script>
+        document.write( new µDate( 2000, 0, 1, 'Europe/Paris' ) );
+    </script></pre>
+    <pre><script>
+        document.write( new µDate( 2000, 0, 1, 'Asia/Shanghai' ) );
+    </script></pre>
+    <pre><script>
+        document.write( new µDate( 2000, 0, 1, 'America/New_York' ) );
+    </script></pre>
+
+    <pre><script>
+        document.write( new µDate( Date.now(), 'America/New_York' ) );
+    </script></pre>
+
+</body>

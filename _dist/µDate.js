@@ -27,4 +27,4 @@ export class µDate extends Date {
     return Math.round(((+new Date(tzDateString)) - (+localeDate)) / mm);
 };
 global.µDate = µDate;
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=µDate.js.map

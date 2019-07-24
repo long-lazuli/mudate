@@ -2,8 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './_sources/index.ts',
-  devtool: 'inline-source-map',
+  entry: './_sources/µDate.ts',
+  devtool: 'source-map',
   devServer: {
     contentBase: './_dist'
   },
@@ -20,7 +20,7 @@ module.exports = {
     extensions: [ '.js', '.ts' ]
   },
   output: {
-    filename: 'index.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, '_dist')
   },
   plugins: [

@@ -9,8 +9,8 @@ export declare const HH: HH;
 declare type µDateArgs = [any?, any?, any?, any?, any?, any?, any?, string?];
 export declare class µDate extends Date {
     constructor(...args: µDateArgs);
-    static timeZoneOffset: (timeZoneStr?: string) => number;
+    static timeZoneOffset: (timeZoneStr?: string | undefined) => number;
     timeShift(milliseconds: MS): this;
 }
 export {};
-//# sourceMappingURL=index.d.ts.map
+//# sourceMappingURL=µDate.d.ts.map

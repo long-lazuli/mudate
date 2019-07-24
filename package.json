@@ -1,12 +1,12 @@
 {
   "name": "mudate",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "µDate is a superset of Date that helps you handle timezones",
   "main": "_dist/index.js",
   "types": "_dist/index.d.js",
   "scripts": {
-    "start": "webpack-dev-server  --mode development --progress --color --open",
-    "build": "webpack && tsc",
+    "start": "webpack-dev-server --mode development --progress --color --open",
+    "build": "webpack --mode production && tsc",
     "publish:gh-pages": "git checkout master; npm run build; git subtree split --prefix _dist -b gh-pages; git push -f origin gh-pages:gh-pages; git branch -D gh-pages",
     "publish:npmjs": "npm publish"
   },

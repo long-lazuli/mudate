@@ -1,11 +1,7 @@
-type MS = number
-export const ms: MS = 1;
-type SS = number
-export const ss: SS = 1000;
-type MM = number
-export const mm: MM = ss * 60;
-type HH = number
-export const HH: HH = mm * 60;
+export const ms: number = 1;
+export const ss: number = 1000;
+export const mm: number = ss * 60;
+export const HH: number = mm * 60;
 
 type DateArgs= [any?, any?, any?, any?, any?, any?, any?]
 type µDateArgs= [any?, any?, any?, any?, any?, any?, any?, string?]
@@ -30,7 +26,7 @@ export class µDate extends Date {
     return Math.round( ( (+new Date(tzDateString)) - (+localeDate) ) / mm )
   }
 
-  timeShift(milliseconds: MS){
+  timeShift(milliseconds: number){
     this.setTime( this.getTime() + milliseconds )
     return this
   }
